@@ -54,7 +54,7 @@ public class MyPersistenceUnitInfo implements PersistenceUnitInfo{
     }
     @Override
     public List<String> getManagedClassNames() {
-        return List.of("jpa_study.com.mycom.myapp.entity.Product");
+        return List.of("jpa_study.com.mycom.myapp.entity.Employee");
     }
     @Override
     public boolean excludeUnlistedClasses() {
