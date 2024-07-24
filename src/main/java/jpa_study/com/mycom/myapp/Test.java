@@ -144,16 +144,49 @@ public class Test {
 
                 // find()는 즉각 실행
                 // getReference() 사용될 때 실행
-                Employee e1 = em.getReference(Employee.class,1);
-                e1.setName("이길동");
+//                Employee e1 = em.getReference(Employee.class,1);
+//                e1.setName("이길동");
+//
+//                try {
+//					Thread.sleep(10000);
+//				}catch(Exception e) {
+//					e.printStackTrace();
+//				}
+//
+//                System.out.println(e1);
+            }
+
+            // remove
+            {
+//                Employee e1 = em.find(Employee.class, 1);
+//
+//                em.remove(e1);
+//                try {
+//					Thread.sleep(10000);
+//				}catch(Exception e) {
+//					e.printStackTrace();
+//				}
+//
+//                System.out.println(e1);
+            }
+
+            //refresh
+            {
+                Employee e1 = em.find(Employee.class, 1);
+                //refresh 전, 주소 변경
+                e1.setAddress("아까 거기");
+
+                System.out.println(e1);
 
                 try {
 					Thread.sleep(10000);
 				}catch(Exception e) {
 					e.printStackTrace();
 				}
+                em.refresh(e1);
 
-                System.out.println(e1);
+                // refresh 후
+                System.out.println(e1); // select 수행으로 객체 <- table
             }
 
             em.getTransaction().commit(); //update tngod
